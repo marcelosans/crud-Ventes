@@ -6,6 +6,7 @@ use App\Livewire\HomePage;
 use App\Livewire\FerMarxants;
 use App\Http\Controllers\FileController;
 use App\Livewire\EditParada;
+use App\Livewire\IndicadorsPage;
 // Ensure the MakeParada class exists at app/Livewire/MakeParada.php
 use App\Livewire\MakeParada;
 use App\Livewire\ParadasPage;
@@ -17,6 +18,7 @@ Route::get('/fer-parada', MakeParada::class);
 Route::get('/editar-parada/{id}', EditParada::class);
 Route::get('/paradas', ParadasPage::class);
 Route::get('/fer-parada', MakeParada::class);
+Route::get('/indicadors', IndicadorsPage::class);
 
 
 
