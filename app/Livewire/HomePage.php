@@ -5,7 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
-use App\Models\Marxant;
+use App\Models\marxant;
 
 class HomePage extends Component
 {
@@ -43,7 +43,7 @@ class HomePage extends Component
 
     public function render()
     {
-        $marxants = Marxant::query()
+        $marxants = marxant::query()
             ->when($this->search, function ($query) {
                 return $query->where('nom', 'like', '%' . $this->search . '%')
                     ->orWhere('nif', 'like', '%' . $this->search . '%')
@@ -70,7 +70,7 @@ class HomePage extends Component
      */
     public function openModal($id)
     {
-        $this->selectedMarxant = Marxant::findOrFail($id);
+        $this->selectedMarxant = marxant::findOrFail($id);
         
         // Cargamos las imágenes si existen
         if ($this->selectedMarxant->imatges) {
@@ -140,7 +140,7 @@ class HomePage extends Component
      */
     public function deleteMarxant($id)
     {
-        $marxant = Marxant::find($id);
+        $marxant = marxant::find($id);
         if ($marxant) {
             $marxant->delete();
             session()->flash('message', 'Marxant eliminat correctament.');
