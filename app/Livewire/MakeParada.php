@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use App\Models\Marxant;
+use App\Models\marxant;
 use App\Models\Parada;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -206,7 +206,7 @@ protected $messages = [
     public function searchMarxant()
     {
         if (strlen($this->searchTerm) >= 2) {
-            $this->searchResults = Marxant::where('nom', 'like', '%' . $this->searchTerm . '%')
+            $this->searchResults = marxant::where('nom', 'like', '%' . $this->searchTerm . '%')
                 ->orWhere('nif', 'like', '%' . $this->searchTerm . '%')
                 ->limit(5)
                 ->get();
@@ -217,7 +217,7 @@ protected $messages = [
 
     public function selectMarxant($id)
     {
-        $this->selectedMarxant = Marxant::find($id);
+        $this->selectedMarxant = marxant::find($id);
         $this->marxant_id = $id;
 
         //dd($this->marxant_id);

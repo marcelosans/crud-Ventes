@@ -3,7 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Parada;
-use App\Models\Marxant;
+use App\Models\marxant;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Storage;
@@ -260,7 +260,7 @@ class EditParada extends Component
     public function searchMarxant()
     {
         if (strlen($this->searchTerm) >= 2) {
-            $this->searchResults = Marxant::where('nom', 'like', '%' . $this->searchTerm . '%')
+            $this->searchResults = marxant::where('nom', 'like', '%' . $this->searchTerm . '%')
                 ->orWhere('nif', 'like', '%' . $this->searchTerm . '%')
                 ->limit(5)
                 ->get();
@@ -284,7 +284,7 @@ class EditParada extends Component
 
     public function selectMarxant($id)
     {
-        $this->selectedMarxant = Marxant::find($id);
+        $this->selectedMarxant = marxant::find($id);
         $this->marxant_id = $this->selectedMarxant->id;
         $this->searchTerm = '';
         $this->searchResults = [];
