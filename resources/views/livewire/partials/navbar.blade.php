@@ -73,6 +73,12 @@
                @click="mobileMenuOpen = false">
                 Marxants
             </a>
+            <a href="/indicadors" 
+               class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md text-base font-medium transition-colors duration-200 {{ request()->is('/') ? 'text-blue-600 bg-blue-50' : '' }}"
+               wire:navigate
+               @click="mobileMenuOpen = false">
+                Indicadors
+            </a>
         </div>
     </div>
 </nav>
