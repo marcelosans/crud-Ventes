@@ -26,6 +26,7 @@ class FerMarxants extends Component
     public $imatges = [];
     public $fitxers_adjuntats = [];
     public $dades_publiques = 'Si'; // Valor por defecto
+    public $actiu = 'Si';
 
     // Reglas de validación
     protected function rules()
@@ -133,6 +134,7 @@ class FerMarxants extends Component
             'regim_ss' => $this->regim_ss,
             'asseguranca' => $this->asseguranca,
             'observacions' => $this->observacions,
+            'actiu' => $this->actiu,
             'imatges' => !empty($imatges_guardades) ? json_encode($imatges_guardades) : null,
             'fitxers_adjuntats' => !empty($fitxers_guardats) ? json_encode($fitxers_guardats) : null,
             'dades_publiques' => $this->dades_publiques,

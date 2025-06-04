@@ -30,6 +30,7 @@ class MakeParada extends Component
     public $imatges = [];
     public $fitxers_adjuntats = [];
     public $observacions;
+    public $ubicacio;
 
     // Para la búsqueda del marxant
     public $searchTerm = '';
@@ -136,6 +137,7 @@ protected function rules()
         'metres_lineals' => 'required|numeric|min:0',
         'metres_de_fons' => 'nullable|numeric|min:0',
         'estacionament' => 'required|in:Si,No',
+        'ubicacio' => 'required|string|max:150',
         'imatges.*' => 'sometimes|nullable|image|max:2048', // 2MB
         'fitxers_adjuntats.*' => 'sometimes|nullable|file|max:10240', // 10MB
         'observacions' => 'nullable|string|max:65535',
@@ -158,6 +160,9 @@ protected $messages = [
 
     'tipus_parada.string' => 'El tipus de parada ha de ser una cadena de text.',
     'tipus_parada.max' => 'El tipus de parada no pot tenir més de 100 caràcters.',
+
+    'ubicacio.max' => 'La ubicació no pot tenir més de 150 caracters',
+    'ubicacio.required' => 'Has de posar una ubicació',
 
     'is_comerc_local.in' => 'El valor per a "És comerç local?" ha de ser "Si" o "No".',
 
@@ -290,6 +295,7 @@ protected $messages = [
             'metres_lineals' => $this->metres_lineals,
             'metres_de_fons' => $this->metres_de_fons,
             'estacionament' => $this->estacionament,
+            'ubicacio' => $this->ubicacio,
             'imatges' => json_encode($imatgesPaths),
             'fitxers_adjuntats' => json_encode($fitxersPaths),
             'observacions' => $this->observacions,

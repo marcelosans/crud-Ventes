@@ -22,6 +22,7 @@ class Parada extends Model
         'estacionament',
         'imatges',
         'fitxers_adjuntats',
+        'ubicacio',
         'observacions',
     ];
 

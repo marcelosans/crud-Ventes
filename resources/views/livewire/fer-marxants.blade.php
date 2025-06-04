@@ -238,6 +238,17 @@
             @error('dades_publiques') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
         </div>
 
+         <!-- Activo o No Activo -->
+         <div class="mb-4">
+            <label for="dades_publiques" class="block text-sm font-medium text-gray-700">Actiu:<span class="text-red-500">*</label>
+            <select id="dades_publiques" wire:model="dades_publiques" 
+                class="mt-1 p-2 w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <option value="Si">Actiu</option>
+                <option value="No">Inactiu</option>
+            </select>
+            @error('actiu') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+        </div>
+
         <!-- Botón de guardar -->
         <div class="flex justify-center mt-6">
             <button type="submit" 

@@ -90,6 +90,10 @@
                                     </span>
                                 @endif
                             </th>
+                             <th
+                                class="hidden sm:table-cell px-2 sm:px-4 md:px-6 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer">
+                                Actiu
+                            </th>
                             <th class="px-2 sm:px-4 md:px-6 py-2 sm:py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Accions
                             </th>
@@ -109,6 +113,9 @@
                                 </td>
                                 <td class="hidden sm:table-cell px-2 sm:px-4 md:px-6 py-2 sm:py-4 whitespace-nowrap">
                                     <div class="text-xs sm:text-sm text-gray-500">{{ $marxant->correu }}</div>
+                                </td>
+                                 <td class="hidden sm:table-cell px-2 sm:px-4 md:px-6 py-2 sm:py-4 whitespace-nowrap">
+                                    <div class="text-xs sm:text-sm text-gray-500">{{ $marxant->actiu }}</div>
                                 </td>
                                 <td class="px-2 sm:px-4 md:px-6 py-2 sm:py-4 whitespace-nowrap text-right text-xs sm:text-sm font-medium">
                                     <div class="flex flex-col sm:flex-row justify-end sm:space-x-2 space-y-1 sm:space-y-0">

@@ -29,6 +29,7 @@ class EditarMarxant extends Component
     public $dades_publiques = 'Si'; // Valor por defecto
     public $created_at;
     public $updated_at;
+    public $actiu;
     
     // Para las imágenes y archivos existentes
     public $imatges_existents = [];
@@ -96,6 +97,8 @@ class EditarMarxant extends Component
         $this->asseguranca = $marxant->asseguranca;
         $this->observacions = $marxant->observacions;
         $this->dades_publiques = $marxant->dades_publiques;
+        $this->actiu = $marxant->actiu;
+        
         
         // Cargar imágenes y archivos existentes si están almacenados como JSON
         if ($marxant->imatges) {
@@ -150,6 +153,7 @@ class EditarMarxant extends Component
         $marxant->asseguranca = $this->asseguranca;
         $marxant->observacions = $this->observacions;
         $marxant->dades_publiques = $this->dades_publiques;
+        $marxant->actiu = $this->actiu;
         
         // Crear directorio basado en el NIF del marxant
         $nifDirectori = str_replace(['/', '\\', ' ', '.'], '_', $this->nif); // Sanitizar NIF para usarlo como nombre de directorio

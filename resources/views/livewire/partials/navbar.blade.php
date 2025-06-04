@@ -25,6 +25,13 @@
                             Marxants
                         </a>
                     </li>
+                     <li>
+                        <a href="/indicadors" 
+                           class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 hover:bg-blue-50 {{ request()->is('/') ? 'text-blue-600 bg-blue-50' : '' }}"
+                           wire:navigate>
+                            Indicadors
+                        </a>
+                    </li>
                 </ul>
             </div>
             

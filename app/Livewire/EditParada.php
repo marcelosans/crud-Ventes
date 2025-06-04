@@ -30,6 +30,7 @@ class EditParada extends Component
     public $imatges = [];
     public $fitxers_adjuntats = [];
     public $observacions;
+    public $ubicacio;
 
     // Nuevas propiedades para manejar archivos existentes
     public $existing_images = [];
@@ -150,6 +151,7 @@ class EditParada extends Component
         'activitat' => 'required|string',
         'metres_lineals' => 'required|numeric|min:0',
         'metres_de_fons' => 'nullable|numeric|min:0',
+        'ubicacio' => 'required|string|max:150',
         'estacionament' => 'required|in:Si,No',
         'imatges.*' => 'sometimes|nullable|image|max:2048', // 2MB
         'fitxers_adjuntats.*' => 'sometimes|nullable|file|max:10240', // 10MB
@@ -168,6 +170,9 @@ class EditParada extends Component
 
     'data_alta.required' => 'La data d\'alta és obligatòria.',
     'data_alta.date' => 'La data d\'alta ha de ser una data vàlida.',
+
+    'ubicacio.max' => 'La ubicació no pot tenir més de 150 caracters',
+    'ubicacio.required' => 'Has de posar una ubicació',
 
     'data_last_renovation.date' => 'La data de renovació ha de ser una data vàlida.',
 
@@ -227,7 +232,10 @@ class EditParada extends Component
     $this->metres_lineals = $parada->metres_lineals;
     $this->metres_de_fons = $parada->metres_de_fons;
     $this->estacionament = $parada->estacionament ?? 'Si';
+     $this->ubicacio = $parada->ubicacio;
     $this->observacions = $parada->observacions;
+
+    
 
     // Cargar opciones según sector
     $this->activitatOptions = $this->activitatsPerSector[$this->sector] ?? [];
@@ -377,6 +385,7 @@ public function save()
         'metres_lineals' => $this->metres_lineals,
         'metres_de_fons' => $this->metres_de_fons,
         'estacionament' => $this->estacionament,
+        'ubicacio' => $this->ubicacio,
         'observacions' => $this->observacions,
     ]);
 
